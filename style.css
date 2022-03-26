@@ -87,22 +87,22 @@ html {
 .card::before {
     content: '';
     height: 100%;
-    width: 0.5rem;
+    width: 0.4rem;
     background-color: #958a28;
     position: absolute;
     top: 0;
-    left: -0.5rem;
+    left: -0.4rem;
     transform: skewY(45deg);
     transform-origin: right;
 }
 
 .card::after {
     content: '';
-    height: 0.5rem;
+    height: 0.4rem;
     width: 100%;
     background-color: #817823;
     position: absolute;
-    top: -0.5rem;
+    top: -0.4rem;
     left: 0;
     transform: skewX(45deg);
     transform-origin: bottom;
