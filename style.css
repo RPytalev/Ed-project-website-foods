@@ -46,7 +46,7 @@ html {
 .section-1-icons i {
     font-size: 30rem;
     text-shadow: 0.1rem 0.1rem 0.1rem #000;
-    color: #a79a2d;
+    color: #c7b938;
     position: absolute;
     transform: translate(-50%, -50%) scale(0);
 }
@@ -66,7 +66,7 @@ html {
 
 .card {
     width: 30rem;
-    background-color: #a79a2d;
+    background-color: #c7b938;
     margin: 0 2rem;
     padding: 4rem;
     display: flex;
@@ -137,3 +137,104 @@ html {
     box-shadow: -0.2rem -0.2rem 0.2rem #000;
 }
 
+.section-3 {
+    background-color: #333;
+    padding: 5rem 0;
+}
+
+.gallery {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10rem;
+}
+
+.gallery-link {
+    width: calc(33.3%);
+    position: relative;
+    margin-bottom: 4rem;
+}
+
+.gallery-link::before {
+    content: '';
+    position: absolute;
+    top: 13.8rem;
+    left: 2rem;
+    width: 0.1rem;
+    height: 0;
+    background-color: #fff;
+    z-index: 555;
+    transition: 0.4s;
+}
+
+.gallery-link::after {
+    content: '';
+    position: absolute;
+    top: 14.4rem;
+    left: 1.4rem;
+    width: 0;
+    height: 0.1rem;
+    background-color: #fff;
+    z-index: 555;
+    transition: 0.4s;
+}
+
+.gallery-link:hover::before {
+    height: 25%;
+}
+
+.gallery-link:hover::after {
+    width: 25%;
+}
+
+.gallery-food-img {
+    width: 24vw;
+    height: 15vw;
+    object-fit: cover;
+    filter: grayscale(100%);
+    box-shadow: 0.6rem 0.6rem 0.6rem #000;
+}
+
+.gallery-food-img:hover {
+    filter: grayscale(0%);
+    opacity: 0.5;
+    transform: scale(1.1);
+    transition: 0.5s;
+}
+
+.gallery-food-name {
+    position: absolute;
+    top: 1rem;
+    left: 2rem;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #c7b938;
+    width: 0;
+    overflow: hidden;
+    transition: 0.5s;
+}
+
+.gallery-link:hover .gallery-food-name {
+    width: 100%;
+    transition: 0.5s;
+}
+
+.gallery-food-description {
+    width: 60%;
+    position: absolute;
+    left: 3rem;
+    bottom: 1rem;
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: #fff;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.5s;
+}
+
+.gallery-link:hover .gallery-food-description {
+    opacity: 1;
+    visibility: visible;
+    transition: 0.5s;
+}

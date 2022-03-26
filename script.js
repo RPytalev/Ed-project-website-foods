@@ -11,8 +11,8 @@ let timerId = setInterval(() => {
     } else {
         icon.nextElementSibling.classList.add('active');
     }
-}, 1000);
+}, 500);
 
 setTimeout(() => {
     clearInterval(timerId);
-}, 10100);
+}, 5100);
