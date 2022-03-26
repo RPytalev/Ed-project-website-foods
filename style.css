@@ -54,3 +54,86 @@ html {
 .section-1-icons .active {
     transform: translate(-50%, -50%) scale(1);
 }
+
+.section-2 {
+    background-color: #222;
+}
+
+.cards-container {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.card {
+    width: 30rem;
+    background-color: #a79a2d;
+    margin: 0 2rem;
+    padding: 4rem;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 1rem 1rem 1rem #000;
+    position: relative;
+    transform: rotateY(20deg) skewX(-2deg);
+}
+
+.card:hover {
+    transform: rotateY(20deg) skewX(-2deg) translateY(-3rem);
+    box-shadow: 2rem 2rem 2rem #000;
+    transition: 0.3s;
+}
+
+.card::before {
+    content: '';
+    height: 100%;
+    width: 0.5rem;
+    background-color: #958a28;
+    position: absolute;
+    top: 0;
+    left: -0.5rem;
+    transform: skewY(45deg);
+    transform-origin: right;
+}
+
+.card::after {
+    content: '';
+    height: 0.5rem;
+    width: 100%;
+    background-color: #817823;
+    position: absolute;
+    top: -0.5rem;
+    left: 0;
+    transform: skewX(45deg);
+    transform-origin: bottom;
+}
+
+.icon {
+    width: 100%;
+}
+
+.card-name {
+    font-size: 3rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    color: #111;
+    margin: 2rem 0;
+    text-shadow: -0.1rem -0.1rem 0.1rem #000;
+}
+
+.card-btn {
+    width: 70%;
+    background-color: #111;
+    color: rgb(255, 255, 255);
+    border-radius: 1rem;
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: 0.1rem;
+    text-transform: capitalize;
+    border: none;
+    padding: 0.2rem 0;
+    cursor: pointer;
+    box-shadow: -0.2rem -0.2rem 0.2rem #000;
+}
+
