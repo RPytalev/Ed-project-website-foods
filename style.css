@@ -53,7 +53,7 @@ html {
     justify-content: center;
     align-items: center;
     opacity: 0;
-    transition: 0.4s;
+    transition: color 0.4s opacity 0.2s;
 }
 
 .navbar-link:hover {
@@ -62,27 +62,27 @@ html {
 
 .change .navbar-link:nth-child(1) {
     opacity: 1;
-    transition: 0.4s 0.4s;
+    transition: opacity 0.4s 0.4s, color 0.4s;
 }
 
 .change .navbar-link:nth-child(2) {
     opacity: 1;
-    transition: 0.4s 0.6s;
+    transition: opacity 0.4s 0.6s, color 0.4s;
 }
 
 .change .navbar-link:nth-child(3) {
     opacity: 1;
-    transition: 0.4s 0.8s;
+    transition: opacity 0.4s 0.8s, color 0.4s;
 }
 
 .change .navbar-link:nth-child(4) {
     opacity: 1;
-    transition: 0.4s 1s;
+    transition: opacity 0.4s 1s, color 0.4s;
 }
 
 .change .navbar-link:nth-child(5) {
     opacity: 1;
-    transition: 0.4s 1.2s;
+    transition: opacity 0.4s 1.2s, color 0.4s;
 }
 
 .navbar-link i {
