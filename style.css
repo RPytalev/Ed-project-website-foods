@@ -9,20 +9,95 @@
     font-family: "Montserrat", sans-serif;
 }
 
+:root {
+    --main-color1: #eee; 
+    --main-color2: #c7b938;
+    --main-color3: #333;
+    --main-color4: #222;
+}
+
 html {
     font-size: 62.5%;
-    max-width: 1200px;
-    padding: 0 15px;
     margin: 0 auto;
 }
 
-.section-heading {
-    font-size: 12rem;
-    font-weight: 800;
-    text-shadow: 0.2rem 0.2rem 0.2rem rgb(0, 0, 0);
-    color: #eee;
-    text-align: center;
-    text-transform: uppercase;
+.header {
+    width: 100%;
+    height: 14rem;
+    background-color: #000;
+    position: fixed;
+    top: -14rem;
+    z-index: 555;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0.2rem 0.2rem 0.2rem rgb(0, 0, 0);
+    transition: 0.4s 0.2s;
+}
+
+.header.change {
+    top: 0;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar-link {
+    color: #aaa;
+    margin: 0 4rem;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    transition: 0.4s;
+}
+
+.navbar-link:hover {
+    color: #fff;
+}
+
+.navbar-link i {
+    font-size: 5rem;
+}
+
+.navbar-link span {
+    font-size: 2.5rem;
+    font-weight: 900;
+    margin-top: 0.5rem;
+}
+
+.navbar-toggler {
+    width: 4rem;
+    height: 6rem;
+    background-color: #000;
+    position: fixed;
+    top: 1rem;
+    right: 5rem;
+    border-bottom: 0.1rem solid var(--main-color2);
+    border-right: 0.1rem solid var(--main-color2);
+    border-radius: 30rem 30rem 15rem 15rem;
+    cursor: pointer;
+    /* box-shadow: 0.1rem 0.1rem 0.1rem #000; */
+    transition: 0.4s;
+}
+
+.navbar-toggler.change {
+    top: 15rem;
+    transition: 0.4s;
+}
+
+.navbar-toggler::before {
+    content: '';
+    width: 0.3rem;
+    height: 15rem;
+    position: absolute;
+    background-color: #000;
+    top: -15rem;
+    left: calc(50% - 0.15rem);
+    box-shadow: 0.1rem 0 0 #000;
 }
 
 .section {
@@ -34,8 +109,17 @@ html {
     justify-content: space-evenly;
 }
 
+.section-heading {
+    font-size: 12rem;
+    font-weight: 800;
+    text-shadow: 0.2rem 0.2rem 0.2rem rgb(0, 0, 0);
+    color: var(--main-color1);
+    text-align: center;
+    text-transform: uppercase;
+}
+
 .section-1 {
-    background-color: #333;
+    background-color: var(--main-color3);
 }
 
 .section-1-icons {
@@ -45,7 +129,7 @@ html {
 .section-1-icons i {
     font-size: 30rem;
     text-shadow: 0.1rem 0.1rem 0.1rem #000;
-    color: #c7b938;
+    color: var(--main-color2);
     position: absolute;
     transform: translate(-50%, -50%) scale(0);
 }
@@ -55,7 +139,7 @@ html {
 }
 
 .section-2 {
-    background-color: #222;
+    background-color: var(--main-color4);
 }
 
 .cards-container {
@@ -65,7 +149,7 @@ html {
 
 .card {
     width: 30rem;
-    background-color: #c7b938;
+    background-color: var(--main-color2);
     margin: 0 2rem;
     padding: 4rem;
     display: flex;
@@ -80,7 +164,7 @@ html {
 .card:hover {
     transform: rotateY(20deg) skewX(-2deg) translateY(-3rem);
     box-shadow: 2rem 2rem 2rem #000;
-    transition: 0.3s;
+    transition: 0.4s;
 }
 
 .card::before {
@@ -124,7 +208,7 @@ html {
 .card-btn {
     width: 70%;
     background-color: #111;
-    color: #eee;
+    color: var(--main-color1);
     border-radius: 1rem;
     font-size: 1.5rem;
     font-weight: 800;
@@ -137,23 +221,20 @@ html {
 }
 
 .section-3 {
-    background-color: #333;
+    background-color: var(--main-color3);
     padding: 5rem 0;
 }
 
 .gallery {
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 10rem;
-    margin-left: 3rem;
+    justify-content: center;
+    margin-top: 2rem;
 }
 
 .gallery-link {
-    width: calc(33.3%);
+    flex: 0 0 auto;
     position: relative;
-    margin-bottom: 4rem;
 }
 
 .gallery-link::before {
@@ -163,7 +244,7 @@ html {
     left: 2rem;
     width: 0.1rem;
     height: 0;
-    background-color: #eee;
+    background-color: var(--main-color1);
     z-index: 555;
     transition: 0.4s;
 }
@@ -175,7 +256,7 @@ html {
     left: 1.4rem;
     width: 0;
     height: 0.1rem;
-    background-color: #eee;
+    background-color: var(--main-color1);
     z-index: 555;
     transition: 0.4s;
 }
@@ -189,60 +270,61 @@ html {
 }
 
 .gallery-food-img {
-    width: 24vw;
-    height: 15vw;
+    width: 26vw;
+    height: 16vw;
     object-fit: cover;
     filter: grayscale(100%);
     box-shadow: 0.6rem 0.6rem 0.6rem #000;
-    transition: 0.5s;
+    transition: 0.4s;
+    margin: 1rem;
 }
 
 .gallery-food-img:hover {
-    filter: grayscale(0%);
     opacity: 0.5;
-    transform: scale(1.1);
+    filter: grayscale(0%);
+    transform: scale(1.05);
 }
 
 .gallery-food-name {
     position: absolute;
-    top: 1rem;
+    top: 2rem;
     left: 2rem;
     font-size: 2rem;
     font-weight: 700;
-    color: #c7b938;
+    color: var(--main-color2);
     width: 0;
     overflow: hidden;
-    transition: 0.5s;
+    transition: 0.4s;
 }
 
 .gallery-link:hover .gallery-food-name {
     width: 100%;
-    transition: 0.5s;
+    transition: 0.4s;
 }
 
 .gallery-food-description {
     width: 60%;
     position: absolute;
     left: 3rem;
-    bottom: 1rem;
+    bottom: 4rem;
     font-size: 1.2rem;
     font-weight: 300;
-    color: #eee;
+    color: var(--main-color1);
     opacity: 0;
     visibility: hidden;
-    transition: 0.5s;
+    transition: 0.4s;
 }
 
 .gallery-link:hover .gallery-food-description {
     opacity: 1;
     visibility: visible;
-    transition: 0.5s;
+    transition: 0.4s;
 }
 
 .footer {
     width: 100%;
     height: 30vh;
-    background-color: #222;
+    background-color: var(--main-color4);
     display: flex;
     justify-content: space-around;
     align-items: flex-start;
@@ -254,7 +336,7 @@ html {
     text-transform: uppercase;
     font-size: 4rem;
     font-weight: 900;
-    color: #c7b938;
+    color: var(--main-color2);
 }
 
 .footer-text-paragraph {
@@ -271,13 +353,13 @@ html {
     width: 35rem;
     height: 5rem;
     padding: 1rem;
-    border: 0.2rem solid #c7b938;
+    border: 0.2rem solid var(--main-color2);
     font-size: 1.2rem;
     font-weight: 700;
 }
 
 .footer-signup-form-input::placeholder {
-    color: #c7b938;
+    color: var(--main-color2);
 }
 
 .footer-signup-form-btn {
@@ -287,16 +369,21 @@ html {
     height: 4rem;
     font-size: 1.8rem;
     background-color: #333;
-    color: #c7b938;
+    color: var(--main-color2);
     border: none;
     cursor: pointer;
+}
+
+.footer-signup-form-btn:hover {
+    color: #333;
+    background-color: var(--main-color2);
 }
 
 .copyright {
     font-size: 1.2rem;
     position: absolute;
     bottom: 3rem;
-    color: #eee;
+    color: var(--main-color1);
     width: 100%;
     border-top: .1rem solid #888;
     padding-top: 2rem;
